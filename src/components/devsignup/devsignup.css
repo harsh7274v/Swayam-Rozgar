@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial, sans-serif;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    
+}
+/* .signin-container{
+    
+    width: 70%;
+} */
+
+
+.signin-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    text-align: center;
+    /* box-sizing: border-box;
+    overflow: hidden; */
+
+}
+#heading{
+    text-align: center;
+    margin-top: 300px;
+    margin-bottom: 20px;
+}
+
+
+#check-box{
+    margin-top: 25px;
+    
+}
+
+#create-account {
+    background-color: #4CAF50;
+    color: white;
+    width:100%;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    
+}
+#google-btn {
+    /* background-color: #db4a39; */
+    color: white;
+    /* margin-bottom: 20px; */
+    /* margin-top: 20px; */
+    border-radius: 10px;
+}
+#apple-btn {
+    /* background-color: #000; */
+    /* color: black; */
+    /* margin-bottom: 130px; */
+    border-radius: 10px;
+}
+#do{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* *,
+*::before,
+*::after {
+    box-sizing: border-box;
+} */
