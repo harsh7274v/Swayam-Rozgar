@@ -1,73 +1,88 @@
-
 body {
     font-family: Arial, sans-serif;
-   
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 105vh;
-    background-color: #f4f4f4;
-    margin: 0;
-    
-}
-/* .signin-container{
-    
-    width: 70%;
-} */
-
-
-.signin-container {
+    height: 100vh;
     background-color: white;
+}
+.main-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.left-container{
+    width: 45%;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    text-align: center;
-    /* box-sizing: border-box;
-    overflow: hidden; */
-
-}
-#heading{
-    text-align: center;
-    margin-top: 300px;
-    margin-bottom: 20px;
+    background-color: white;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; */
 }
 
+.right-container {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; */
+}
+.left-container h1 {
 
-#check-box{
-    margin-top: 25px;
-    
-}
-
-#create-account {
-    background-color: #4CAF50;
-    color: white;
-    width:100%;
-    margin-bottom: 20px;
-    margin-top: 25px;
-    border-radius: 10px;
-    
-}
-#google-btn {
-    /* background-color: #db4a39; */
-    color: white;
-    /* margin-bottom: 20px; */
-    /* margin-top: 20px; */
-    border-radius: 10px;
-}
-#apple-btn {
-    /* background-color: #000; */
-    /* color: black; */
-    /* margin-bottom: 130px; */
-    border-radius: 10px;
-}
-#do{
-    margin-top: 20px;
+    font-size: 36px;
     margin-bottom: 10px;
 }
+.left-container p {
+    font-size: 18px;
+    color: #555;
+}
+.right-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.right-container input[type="text"]:focus {
+    border-color: hsl(185, 71%, 67%);
+}
+.right-container p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+#disc {
+    list-style-type: disc; /* Default bullet */
+}
 
-/* *,
-*::before,
-*::after {
-    box-sizing: border-box;
-} */
+footer.footer {
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.left-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.right-button {
+    background-color: #008CBA;
+    color: white;
+    margin-left: 900px;
+}

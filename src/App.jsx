@@ -6,13 +6,14 @@ import Home from './pages/home/Home'
 import Navbar from './components/navbar/Navbar'
 import DevSignin from './components/devsignin/devsignin'
 import DevSignup from './components/devsignup/devsignup'
-
+import PostJob from './components/postajob/postjob'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div><DevSignin/>
+      <Navbar />
+      <div><PostJob/>
      
       </div>
     </>

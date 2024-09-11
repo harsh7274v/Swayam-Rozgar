@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
-
+import { useState } from 'react';
 
 const currencies = [
     {
@@ -32,7 +32,23 @@ const currencies = [
   ];
 
 export default function DevSignup() {
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    setEmailError(event.target.value === '');
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (email === '') {
+      setEmailError(true);
+    } else {
+      // Handle form submission
+      console.log('Form submitted');
+    }
+  };
     return(<>
     <body>
     <div className="signin-container" style={{width:'50%'}}>
@@ -48,7 +64,15 @@ export default function DevSignup() {
          focused />
 
         <TextField id="last-name" label="Last name" color="grey" style={{marginTop: '25px'}} fullWidth focused />
-        <TextField id="email" label="Email" color="grey" focused fullWidth 
+        <TextField id="email"
+         label="Email" 
+         color="grey" 
+         focused
+         value={email}
+         onChange={handleEmailChange}
+         error={emailError}
+         helperText={emailError ? 'Email cannot be empty' : ''}
+        fullWidth 
         style={{marginTop: '25px'}}/>
         
         <TextField
