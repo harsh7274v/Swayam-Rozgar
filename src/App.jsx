@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div><PostJob/>
+      <div><DevSignup/>
      
       </div>
     </>

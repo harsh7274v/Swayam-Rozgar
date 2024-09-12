@@ -2,7 +2,7 @@ import React from "react";
 import './postjob.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';    
-
+// import '../devsignup/devsignup.css';
 
 export default function PostJob() {
 
