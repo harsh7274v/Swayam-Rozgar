@@ -1,30 +1,27 @@
-// const jwt = require('jsonwebtoken');
-
-// exports.authMiddleware = (req, res, next) => {
-//     const token = req.header('Authorization');
-//     if (!token) return res.status(401).json({ message: 'No token provided' });
-
-//     try {
-//         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-//         req.user = decoded;
-//         next();
-//     } catch (error) {
-//         res.status(400).json({ message: 'Invalid token' });
-//     }
-// };
 const jwt = require('jsonwebtoken');
+const Freelancer = require('../models/Freelancer'); // Adjust path if necessary
 
-const authenticate = (req, res, next) => {
-  const token = req.header('Authorization');
-  if (!token) return res.status(401).json({ message: 'Access denied' });
+const authMiddleware = async (req, res, next) => {
+    const token = req.header('Authorization').replace('Bearer ', '');
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(400).json({ message: 'Invalid token' });
-  }
+    if (!token) {
+        return res.status(401).send({ error: 'No token provided' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const freelancer = await Freelancer.findOne({ _id: decoded._id, 'tokens.token': token });
+
+        if (!freelancer) {
+            throw new Error();
+        }
+
+        req.token = token;
+        req.freelancer = freelancer;
+        next();
+    } catch (error) {
+        res.status(401).send({ error: 'Please authenticate' });
+    }
 };
 
-module.exports = authenticate;
+module.exports = authMiddleware;
