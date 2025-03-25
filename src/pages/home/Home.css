@@ -1,0 +1,274 @@
+.home .features {
+    background-color: #f1fdf7;
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.home .features.dark {
+    background-color: #0d084d;
+}
+
+.home .features.dark h1 {
+    color: white !important;
+}
+
+.home .features.dark i {
+    font-weight: 300;
+}
+
+.home .features.dark p {
+    margin-bottom: 20px;
+    color: white !important;
+}
+
+.home .features.dark .title {
+    color: white !important;
+    font-weight: 300 !important;
+    font-size: 14px !important;
+}
+
+.home .features.dark button {
+    background-color: #1dbf73;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: max-content;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.home .features .container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.home .features .container .item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.home .features .container .item img {
+    width: 100%;
+}
+
+.home .features .container .item h1 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.home .features .container .item .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #666;
+}
+
+.home .features .container .item .title img {
+    width: 24px;
+    height: 24px;
+}
+
+.home .features .container .item p {
+    font-size: 16px;
+    font-weight: 300;
+    color: gray;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.home .features .container .item video {
+    width: 100%;
+    max-width: 720px;
+}
+
+.home .explore {
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.home .explore .container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.home .explore .container h1 {
+    color: #555;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.home .explore .container .items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home .explore .container .items .item {
+    width: 140px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.home .explore .container .items .item img {
+    width: 40px;
+    height: 40px;
+}
+
+.home .explore .container .items .item .line {
+    width: 40px;
+    height: 2px;
+    background-color: lightgray;
+    transition: all 0.3s ease;
+}
+
+.home .explore .container .items .item span {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.home .explore .container .items .item:hover .line {
+    width: 60px;
+    background-color: #1dbf73;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .home .features {
+        padding: 70px 20px;
+    }
+
+    .home .features .container .item h1 {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    .home .features .container .item p {
+        font-size: 17px;
+        line-height: 26px;
+        text-align: left;
+    }
+
+    .home .features .container .item .title {
+        font-size: 17px;
+    }
+
+    .home .explore {
+        padding: 70px 20px;
+    }
+
+    .home .explore .container h1 {
+        font-size: 28px;
+    }
+
+    .home .explore .container .items {
+        justify-content: space-between;
+    }
+
+    .home .explore .container .items .item {
+        width: 170px;
+        height: 130px;
+    }
+
+    .home .explore .container .items .item img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .home .explore .container .items .item span {
+        font-size: 15px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .home .features {
+        padding: 100px 0px;
+    }
+
+    .home .features .container {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .home .features .container .item:first-child {
+        flex: 2;
+    }
+
+    .home .features .container .item:last-child {
+        flex: 3;
+    }
+
+    .home .features .container .item h1 {
+        font-size: 32px;
+    }
+
+    .home .features .container .item p {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 1px;
+    }
+
+    .home .features .container .item .title {
+        font-size: 18px;
+    }
+
+    .home .features .container .item video {
+        width: 720px;
+    }
+
+    .home .explore {
+        padding: 100px 0px;
+    }
+
+    .home .explore .container h1 {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .home .explore .container .items .item {
+        width: 250px;
+        height: 150px;
+    }
+
+    .home .explore .container .items .item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .home .explore .container .items .item .line {
+        width: 50px;
+    }
+
+    .home .explore .container .items .item:hover .line {
+        width: 80px;
+    }
+
+    .home .explore .container .items .item span {
+        font-size: 16px;
+    }
+}

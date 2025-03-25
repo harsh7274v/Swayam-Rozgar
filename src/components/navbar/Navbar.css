@@ -1,42 +1,193 @@
-.navbar{
+.navbar {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #013914;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: 0.5s all ease;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
-.navbar .container{
-    width: 2000px;
-    background-color: rgb(19, 138, 88);
+.navbar.active {
+    background-color: white;
+    color: black;
+}
+
+.navbar.active button {
+    background-color: white !important;
+    color: #1dbf73 !important;
+    border: 1px solid #1dbf73 !important;
+}
+
+.navbar .container {
+    width: 100%;
+    max-width: 1400px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
-.navbar .container .logo{
-    font-size: 45px;
+.navbar .container .logo {
+    font-size: 24px;
     font-weight: bold;
 }
 
-.navbar .container .logo .text{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.navbar .container .logo .dot {
+    font-weight: bold;
+    color: #1dbf73;
 }
 
-.navbar .container .links{
+.navbar .container .links {
     display: flex;
     align-items: center;
-    gap:30px;
+    gap: 15px;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
+    font-size: 14px;
 }
 
-#bt1{
-    color:azure;
-    padding: 10px 20px;
+.navbar .container .links span {
+    white-space: nowrap;
+    display: none;
+}
+
+.navbar .container .links .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .container .links .user span {
+    display: block;
+}
+
+.navbar .container .links .user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar .container .links .user .options {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 999;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    font-weight: 300;
+    color: gray;
+}
+
+.navbar .container .links button {
+    color: white;
+    padding: 8px 16px;
     border-radius: 5px;
     border: 1px solid white;
     background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-#bt1:hover{
-    background-color: azure;
-    border-color: azure;
-    color: rgb(19, 138, 88);
+.navbar .container .links button:hover {
+    background-color: #1dbf73;
+    border-color: #1dbf73;
+}
+
+.navbar hr {
+    width: 100%;
+    height: 0;
+    border-top: 0.5px solid #ebe9e9;
+    border-bottom: 0.5px solid #ebe9e9;
+}
+
+.navbar .menu {
+    width: 100%;
+    max-width: 1400px;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    color: gray;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+}
+
+.navbar .menu::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar .menu .link {
+    white-space: nowrap;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .navbar .container {
+        padding: 20px 0px;
+    }
+
+    .navbar .container .logo {
+        font-size: 30px;
+    }
+
+    .navbar .container .links {
+        gap: 20px;
+        font-size: 15px;
+    }
+
+    .navbar .container .links span {
+        display: block;
+    }
+
+    .navbar .container .links button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .navbar .menu {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .navbar .container {
+        padding: 20px 0px;
+    }
+
+    .navbar .container .logo {
+        font-size: 34px;
+    }
+
+    .navbar .container .links {
+        gap: 24px;
+    }
+
+    .navbar .menu {
+        justify-content: space-between;
+        overflow-x: visible;
+        font-size: 15px;
+    }
 }

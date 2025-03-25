@@ -1,23 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/home/Home'
-import Navbar from './components/navbar/Navbar'
-import DevSignin from './components/devsignin/devsignin'
-import DevSignup from './components/devsignup/devsignup'
-import PostJob from './components/postajob/postjob'
-function App() {
-  const [count, setCount] = useState(0)
+//import "./app.scss";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import React from "react";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/footer";
+import Home from "./pages/home/Home";
+import Gigs from "./pages/gigs/Gigs";
+import Gig from "./pages/gig/Gig";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Add from "./pages/add/Add";
+import Orders from "./pages/work/Work";
+import Messages from "./pages/chats/Chats";
+import Message from "./pages/chat/Chat";
+import MyGigs from "./pages/adminGigs/AdminGigs";
 
-  return (
-    <>
-      <Navbar />
-      <div><DevSignup/>
-     
+function App() {
+  const Layout = () => {
+    return (
+      <div className="app">
+        <Navbar />
+        <Outlet />
+        <Footer />
       </div>
-    </>
-  );
+    );
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/gigs",
+          element: <Gigs />,
+        },
+        {
+          path: "/myGigs",
+          element: <MyGigs />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
+        },
+        {
+          path: "/messages",
+          element: <Messages />,
+        },
+        {
+          path: "/message/:id",
+          element: <Message />,
+        },
+        {
+          path: "/add",
+          element: <Add />,
+        },
+        {
+          path: "/gig/:id",
+          element: <Gig />,
+        },
+      ],
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

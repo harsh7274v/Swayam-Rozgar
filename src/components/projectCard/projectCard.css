@@ -1,0 +1,104 @@
+.projectCard {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgb(225, 225, 225);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projectCard img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.projectCard .info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+}
+
+.projectCard .info img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.projectCard .info .texts {
+    overflow: hidden;
+}
+
+.projectCard .info .texts h2 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projectCard .info .texts span {
+    font-size: 13px;
+    font-weight: 300;
+    color: #666;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 576px) {
+    .projectCard {
+        width: 48%;
+        margin-right: 2%;
+    }
+}
+
+@media (min-width: 768px) {
+    .projectCard {
+        width: 31%;
+        margin-right: 2%;
+    }
+}
+
+@media (min-width: 992px) {
+    .projectCard {
+        width: 23%;
+        margin-right: 2%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .projectCard {
+        width: 300px;
+        height: 300px;
+        margin-right: 20px;
+    }
+
+    .projectCard img {
+        height: 70%;
+    }
+
+    .projectCard .info {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .projectCard .info img {
+        width: 40px;
+        height: 40px;
+    }
+}

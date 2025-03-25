@@ -1,11 +1,9 @@
-import React from 'react'
-import "./Login.css"
+import React from "react"
+//import "./Login.scss"
 
-const Login = () => {
+function Login() {
   return (
-    <div className='login'> LOGIN
-      
-    </div>
+    <div>Login</div>
   )
 }
 

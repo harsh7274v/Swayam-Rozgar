@@ -1,13 +1,154 @@
-import React from 'react'
-import "./AdminGigs.css"
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./AdminGigs.css";
 
-const AdminGigs = () => {
+function MyGigs() {
+  const currentUser = {
+    id: 1,
+    username: "Anna",
+    isSeller: true,
+  };
+
+  useEffect(() => {
+    const tableContainer = document.querySelector('.tableContainer');
+    if (tableContainer) {
+      // Check if scroll is possible
+      if (tableContainer.scrollWidth > tableContainer.clientWidth) {
+        tableContainer.classList.add('overflow');
+        
+        // Add 'new' class for first-time visitors
+        if (!localStorage.getItem('tableScrollHintShown')) {
+          tableContainer.classList.add('new');
+          localStorage.setItem('tableScrollHintShown', 'true');
+          
+          // Remove the hint after user scrolls
+          tableContainer.addEventListener('scroll', function() {
+            tableContainer.classList.remove('new');
+          }, {once: true});
+        }
+      }
+    }
+  }, []);
+
   return (
-    <div className='adminGigs'>
-        ADMINGIGS
-      
+    <div className="myGigs">
+      <div className="container">
+        <div className="title">
+          <h1>{currentUser.isSeller ? "Gigs" : "Orders"}</h1>
+          {currentUser.isSeller && (
+            <Link to="/add">
+              <button>Add New Gig</button>
+            </Link>
+          )}
+        </div>
+        <div className="tableContainer">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Sales</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>Stunning concept art</td>
+                <td>59.<sup>99</sup></td>
+                <td>13</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>Ai generated concept art</td>
+                <td>120.<sup>99</sup></td>
+                <td>41</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>High quality digital character</td>
+                <td>79.<sup>99</sup></td>
+                <td>55</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>Illustration hyper realistic painting</td>
+                <td>119.<sup>99</sup></td>
+                <td>29</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>Original ai generated digital art</td>
+                <td>59.<sup>99</sup></td>
+                <td>34</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    className="image"
+                    src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                    alt=""
+                  />
+                </td>
+                <td>Text based ai generated art</td>
+                <td>110.<sup>99</sup></td>
+                <td>16</td>
+                <td>
+                  <img className="delete" src="./img/delete.png" alt="" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default AdminGigs
+export default MyGigs;

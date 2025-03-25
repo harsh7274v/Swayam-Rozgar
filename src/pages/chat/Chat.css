@@ -1,0 +1,201 @@
+.message {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.message .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px 0;
+}
+
+.message .container .breadcrumbs {
+    font-weight: 300;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.message .container .messages {
+    margin: 15px 0px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 350px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
+.message .container .messages .item {
+    display: flex;
+    gap: 8px;
+    max-width: 100%;
+    font-size: 14px;
+}
+
+.message .container .messages .item.owner {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+
+.message .container .messages .item.owner p {
+    border-radius: 20px 0px 20px 20px;
+    background-color: #1dbf73;
+    color: white;
+}
+
+.message .container .messages .item img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Prevent avatar from shrinking */
+}
+
+.message .container .messages .item p {
+    max-width: calc(100% - 42px);
+    padding: 12px;
+    background-color: rgb(244, 241, 241);
+    border-radius: 0px 20px 20px 20px;
+    color: #555;
+    font-weight: 300;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.message .container hr {
+    height: 0;
+    border: 0.5px solid rgb(232, 230, 230);
+    margin-bottom: 15px;
+}
+
+.message .container .write {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message .container .write textarea {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    resize: none;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.message .container .write textarea:focus {
+    outline: 1px solid #1dbf73;
+    border-color: #1dbf73;
+}
+
+.message .container .write button {
+    background-color: #1dbf73;
+    padding: 12px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message .container .write button:active {
+    background-color: #18a564;
+    /* Darker shade for touch feedback */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .message .container {
+        margin: 30px 0;
+    }
+
+    .message .container .breadcrumbs {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    .message .container .messages {
+        height: 450px;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .message .container .messages .item {
+        font-size: 16px;
+        gap: 15px;
+    }
+
+    .message .container .messages .item img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .message .container .messages .item p {
+        padding: 18px;
+        line-height: 1.5;
+    }
+
+    .message .container .write {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .message .container .write textarea {
+        width: 80%;
+        height: 80px;
+        font-size: 16px;
+    }
+
+    .message .container .write button {
+        width: 120px;
+        height: 80px;
+        font-size: 16px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .message .container {
+        margin: 50px 0;
+    }
+
+    .message .container .messages {
+        height: 500px;
+        padding: 50px;
+    }
+
+    .message .container .messages .item {
+        font-size: 18px;
+        gap: 20px;
+        max-width: 600px;
+    }
+
+    .message .container .messages .item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .message .container .messages .item p {
+        max-width: 500px;
+        padding: 20px;
+        line-height: 1.6;
+    }
+}

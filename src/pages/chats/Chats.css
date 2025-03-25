@@ -1,0 +1,257 @@
+.messages {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.messages .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px 0px;
+    /* Reduced padding for mobile */
+}
+
+.messages .container .title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Reduced gap for mobile */
+    margin-bottom: 15px;
+    /* Reduced margin for mobile */
+}
+
+.messages .container .title h1 {
+    font-size: 22px;
+    /* Slightly smaller for mobile */
+    margin: 0;
+}
+
+.messages .container .title button {
+    background-color: #1dbf73;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    align-self: flex-end;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight on mobile */
+}
+
+/* Add touch feedback for mobile */
+.messages .container .title button:active {
+    background-color: #18a564;
+}
+
+.messages .container .tableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -15px;
+    /* Extend beyond padding on mobile */
+    padding: 0 15px;
+    /* Add internal padding to match container */
+    width: calc(100% + 30px);
+    /* Compensate for negative margin */
+    position: relative;
+    /* For scroll indicator */
+}
+
+/* Add horizontal scroll hint for mobile */
+.messages .container .tableContainer:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.messages .container .tableContainer.overflow:before {
+    opacity: 1;
+}
+
+/* Add subtle hint animation to indicate scrollable content on mobile */
+@keyframes scrollHint {
+    0% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.messages .container .tableContainer:after {
+    content: '→';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1dbf73;
+    font-size: 20px;
+    animation: scrollHint 2s infinite;
+    pointer-events: none;
+    z-index: 2;
+    display: none;
+}
+
+.messages .container .tableContainer.new:after {
+    display: block;
+}
+
+.messages .container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.messages .container table tr {
+    height: 70px;
+    /* Reduced height for mobile */
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.messages .container table tr th {
+    text-align: left;
+    padding: 0 10px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    /* Added size for mobile */
+}
+
+.messages .container table tr td {
+    padding: 8px 10px;
+    /* Adjusted padding for mobile */
+    font-size: 13px;
+    /* Smaller text for mobile */
+    white-space: nowrap;
+    /* Prevent text wrapping on mobile */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    /* Limit cell width on mobile */
+}
+
+.messages .container table tr td:first-child {
+    font-weight: 500;
+}
+
+.messages .container table tr td:nth-child(2),
+.messages .container table tr td:nth-child(3) {
+    color: gray;
+}
+
+.messages .container table tr button {
+    background-color: #1dbf73;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight on mobile */
+}
+
+/* Add button active state for mobile touch feedback */
+.messages .container table tr button:active {
+    background-color: #18a564;
+}
+
+.messages .container table tr.active {
+    background-color: #1dbf730f;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .messages .container {
+        padding: 40px 0px;
+    }
+
+    .messages .container .title {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .messages .container .title h1 {
+        font-size: 28px;
+    }
+
+    .messages .container .title button {
+        width: auto;
+    }
+
+    .messages .container .tableContainer {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Hide scroll indicators on tablet and up */
+    .messages .container .tableContainer:before,
+    .messages .container .tableContainer:after {
+        display: none;
+    }
+
+    .messages .container table tr {
+        height: 90px;
+    }
+
+    .messages .container table tr th {
+        font-size: 15px;
+    }
+
+    .messages .container table tr td {
+        font-size: 15px;
+        padding: 10px;
+        max-width: none;
+        /* Remove mobile width constraint */
+        white-space: normal;
+        /* Allow text to wrap on larger screens */
+    }
+
+    .messages .container table tr button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .messages .container {
+        padding: 50px 0px;
+    }
+
+    .messages .container .title h1 {
+        font-size: 32px;
+    }
+
+    .messages .container table tr {
+        height: 100px;
+    }
+
+    .messages .container table tr td {
+        font-size: 16px;
+    }
+
+    .messages .container table tr button {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+}

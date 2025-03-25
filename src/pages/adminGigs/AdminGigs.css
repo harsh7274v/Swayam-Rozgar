@@ -1,0 +1,233 @@
+.myGigs {
+    display: flex;
+    justify-content: center;
+    color: #555;
+    padding: 0 15px;
+}
+
+.myGigs .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px 0px;
+    /* Reduced padding for mobile */
+}
+
+.myGigs .container .title {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.myGigs .container .title h1 {
+    font-size: 22px;
+    /* Smaller size for mobile */
+    margin: 0;
+    font-weight: 600;
+}
+
+.myGigs .container .title button {
+    background-color: #1dbf73;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    align-self: flex-end;
+    font-size: 14px;
+    /* Better size for mobile */
+}
+
+/* Add touch feedback for mobile */
+.myGigs .container .title button:active {
+    background-color: #18a564;
+}
+
+.myGigs .container .tableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -15px;
+    /* Extend beyond container padding */
+    padding: 0 15px;
+    /* Add internal padding to match container */
+    width: calc(100% + 30px);
+    /* Compensate for negative margin */
+    position: relative;
+}
+
+.myGigs .container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    /* Ensures table won't compress too much */
+}
+
+.myGigs .container table tr {
+    height: 50px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.myGigs .container table tr th {
+    text-align: left;
+    padding: 0 10px;
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+    /* Better size for mobile */
+}
+
+.myGigs .container table tr td {
+    padding: 0 10px;
+    font-size: 13px;
+    /* Slightly smaller for mobile */
+    white-space: nowrap;
+    /* Prevent text wrapping on mobile */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    /* Limit cell width on mobile */
+}
+
+.myGigs .container table tr td sup {
+    font-size: 10px;
+    /* Smaller for mobile */
+}
+
+.myGigs .container table tr td .image {
+    width: 50px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.myGigs .container table tr td .delete {
+    width: 20px;
+    cursor: pointer;
+    padding: 8px 5px;
+    /* Larger touch target for mobile */
+    margin: -8px -5px;
+    /* Offset the padding to maintain layout */
+}
+
+.myGigs .container table tr:nth-child(even) {
+    background-color: #1dbf730f;
+}
+
+/* Add horizontal scroll hint for mobile */
+.myGigs .container .tableContainer:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.myGigs .container .tableContainer.overflow:before {
+    opacity: 1;
+}
+
+/* Add subtle hint animation to indicate scrollable content on mobile */
+@keyframes scrollHint {
+    0% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.myGigs .container .tableContainer:after {
+    content: '→';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1dbf73;
+    font-size: 20px;
+    animation: scrollHint 2s infinite;
+    pointer-events: none;
+    z-index: 2;
+    display: none;
+}
+
+.myGigs .container .tableContainer.new:after {
+    display: block;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .myGigs .container {
+        padding: 40px 0px;
+    }
+
+    .myGigs .container .title {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .myGigs .container .title h1 {
+        font-size: 28px;
+    }
+
+    .myGigs .container .title button {
+        width: auto;
+        font-size: 16px;
+    }
+
+    .myGigs .container .tableContainer {
+        margin: 0;
+        /* Reset the margin extension */
+        padding: 0;
+        /* Reset the padding */
+        width: 100%;
+        /* Reset width */
+    }
+
+    .myGigs .container table tr td {
+        font-size: 14px;
+        max-width: none;
+        /* Remove mobile width constraint */
+    }
+
+    .myGigs .container table tr td sup {
+        font-size: 12px;
+    }
+
+    /* Hide scroll hint on tablet and up */
+    .myGigs .container .tableContainer:before,
+    .myGigs .container .tableContainer:after {
+        display: none;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .myGigs .container {
+        padding: 50px 0px;
+    }
+
+    .myGigs .container .title h1 {
+        font-size: 32px;
+    }
+
+    .myGigs .container table tr th,
+    .myGigs .container table tr td {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,438 @@
+.gig {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.gig .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.gig .container .left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gig .container .left .breadcrumbs {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #555;
+}
+
+.gig .container .left .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gig .container .left .user .pp {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gig .container .left .user span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.gig .container .left .user .stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gig .container .left .user .stars img {
+    height: 14px;
+    width: 14px;
+}
+
+.gig .container .left .user .stars span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffc108;
+}
+
+.gig .container .left .slider {
+    background-color: #F5F5F5;
+    margin: 0 -15px;
+    padding: 0 15px;
+}
+
+.gig .container .left .slider img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.gig .container .left p {
+    font-weight: 300;
+    line-height: 24px;
+    color: #555;
+    font-size: 15px;
+}
+
+.gig .container .left .seller {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gig .container .left .seller .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.gig .container .left .seller .user img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gig .container .left .seller .user .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.gig .container .left .seller .user .info .stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gig .container .left .seller .user .info .stars img {
+    height: 14px;
+    width: 14px;
+}
+
+.gig .container .left .seller .user .info .stars span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffc108;
+}
+
+.gig .container .left .seller .user .info button {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.gig .container .left .seller .box {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.gig .container .left .seller .box .items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gig .container .left .seller .box .items .item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.gig .container .left .seller .box .items .item .title {
+    font-weight: 300;
+}
+
+.gig .container .left .seller .box hr {
+    height: 0;
+    border: 0.5px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.gig .container .left .reviews {
+    margin-top: 30px;
+}
+
+.gig .container .left .reviews .item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0px;
+}
+
+.gig .container .left .reviews .item .user {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gig .container .left .reviews .item .user .pp {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.gig .container .left .reviews .item .user .country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: gray;
+    font-size: 14px;
+}
+
+.gig .container .left .reviews .item .user .country img {
+    width: 20px;
+}
+
+.gig .container .left .reviews .item .stars {
+    display: flex;
+    gap: 5px;
+}
+
+.gig .container .left .reviews .item .stars img {
+    height: 14px;
+    width: 14px;
+}
+
+.gig .container .left .reviews .item .stars span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffc108;
+}
+
+.gig .container .left .reviews .item .helpful {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.gig .container .left .reviews .item .helpful img {
+    width: 14px;
+}
+
+.gig .container .left .reviews hr {
+    height: 0;
+    border: 0.5px solid lightgray;
+    margin: 30px 0px;
+}
+
+.gig .container .right {
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    position: static;
+}
+
+.gig .container .right .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gig .container .right .price h2 {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.gig .container .right .price h3 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.gig .container .right p {
+    color: gray;
+    margin: 5px 0px;
+    font-size: 15px;
+}
+
+.gig .container .right .details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.gig .container .right .details .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gig .container .right .details .item img {
+    width: 20px;
+}
+
+.gig .container .right .features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gig .container .right .features .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 300;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+.gig .container .right .features .item img {
+    width: 14px;
+}
+
+.gig .container .right button {
+    background-color: #1dbf73;
+    padding: 12px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .gig .container {
+        padding: 25px 0px;
+        gap: 40px;
+    }
+
+    .gig .container .left .slider img {
+        max-height: 350px;
+    }
+
+    .gig .container .left .seller .user {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .gig .container .left .seller .user .info {
+        align-items: flex-start;
+    }
+
+    .gig .container .left .seller .user .info button {
+        width: auto;
+    }
+
+    .gig .container .left .seller .box .items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .gig .container .left .seller .box .items .item {
+        width: 48%;
+    }
+
+    .gig .container .left .reviews .item .user {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .gig .container .right .details {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gig .container .right button {
+        font-size: 16px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .gig .container {
+        flex-direction: row;
+        gap: 50px;
+        padding: 30px 0px;
+    }
+
+    .gig .container .left {
+        flex: 2;
+    }
+
+    .gig .container .left .slider {
+        margin: 0;
+        padding: 0;
+    }
+
+    .gig .container .left .slider img {
+        max-height: 500px;
+    }
+
+    .gig .container .left .seller {
+        margin-top: 50px;
+    }
+
+    .gig .container .left .seller .user img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gig .container .left .seller .box {
+        padding: 20px;
+    }
+
+    .gig .container .left .seller .box .items .item {
+        width: 300px;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .gig .container .left .reviews {
+        margin-top: 50px;
+    }
+
+    .gig .container .left .reviews hr {
+        margin: 50px 0px;
+    }
+
+    .gig .container .right {
+        flex: 1;
+        height: max-content;
+        max-height: 500px;
+        position: sticky;
+        top: 150px;
+    }
+
+    .gig .container .right .price h2 {
+        font-size: inherit;
+    }
+
+    .gig .container .right .price h3 {
+        font-size: inherit;
+    }
+
+    .gig .container .right button {
+        font-size: 18px;
+    }
+}
